@@ -12,8 +12,8 @@ namespace BlogGen {
 	
 	class AttributesTable {
 		private:
-			std::vector<std::string> 			attrNames;
-			std::map<std::string, std::string> 	attrContents;
+			std::vector<std::string> 					attrNames;
+			std::map<std::string, std::string> 				attrContents;
 			bool								empty;
 		public:
 			AttributesTable() {
@@ -45,7 +45,7 @@ namespace BlogGen {
 			bool end;
 		public:
 			Element() {
-				name 	= "";
+				name 		= "";
 				end		= true;
 			}
 			Element(std::string Name, bool End = true) {
@@ -53,13 +53,13 @@ namespace BlogGen {
 				end 	= End;
 			}
 			Element(const char* Name, bool End = true) {
-				name	= std::string(Name);
+				name		= std::string(Name);
 				end		= End;
 			}
 			std::string create(std::string content, AttributesTable attrTable = EMPTY_ATTRTABLE) {
 				std::string ret = std::string("<") + name + std::string(" ");
 				if (!(attrTable.isEmpty()) {
-					vector<std::string> 			attrNames 		= attrTable.getAttrNames();
+					vector<std::string> 		attrNames 	= attrTable.getAttrNames();
 					map<std::string, std::string> 	attrContents	= attrTable.getAttrContents();
 					for (unsigned int i = 0; i < attrNames.size(); i++) {
 						ret += attrNames[i] + std::string("=") + std::string("\"") + attrContents[attrNames[i]] + std::string("\" ");
@@ -75,7 +75,7 @@ namespace BlogGen {
 			std::string create(AttributesTable attrTable = EMPTY_ATTRTABLE) {
 				std::string ret = std::string("<") + name + std::string(" ");
 				if (!(attrTable.isEmpty())) {
-					vector<std::string> 			attrNames 		= attrTable.getAttrNames();
+					vector<std::string> 		attrNames 	= attrTable.getAttrNames();
 					map<std::string, std::string> 	attrContents	= attrTable.getAttrContents();
 					for (unsigned int i = 0; i < attrNames.size(); i++) {
 						ret += attrNames[i] + std::string("=") + std::string("\"") + attrContents[attrNames[i]] + std::string("\" ");
@@ -90,7 +90,7 @@ namespace BlogGen {
 			}
 	};
 	
-	Element h1 			= Element("h1"), 			// Heading 1
+	Element 	h1 			= Element("h1"), 			// Heading 1
 			h2 			= Element("h2"), 			// Heading 2
 			h3 			= Element("h3"), 			// Heading 3
 			h4 			= Element("h4"), 			// Heading 4
@@ -98,14 +98,14 @@ namespace BlogGen {
 			h6 			= Element("h6"), 			// Heading 6
 			p			= Element("p"),				// Paragraph
 			em			= Element("em"),			// Italicized
-			strong		= Element("strong"),		// Bold
-			code		= Element("code"),			// Monospaced
-			hr			= Element("hr", false),		// Horizontal
+			strong			= Element("strong"),			// Bold
+			code			= Element("code"),			// Monospaced
+			hr			= Element("hr", false),			// Horizontal
 			ol			= Element("ol"),			// Ordered list
 			li			= Element("li"),			// List items
 			ul			= Element("ul"),			// Unordered list
 			a			= Element("a"),				// Hyperlink
-			blockquote	= Element("blockquote"),	// Blockquote
+			blockquote		= Element("blockquote"),		// Blockquote
 			img			= Element("img");			// Image
 			
 	
